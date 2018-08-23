@@ -127,6 +127,11 @@
       <scope>provided</scope>
     </dependency>
     <!-- == End Coding Support == -->
+    
+    <dependency>
+      <groupId>com.github.librepdf</groupId>
+      <artifactId>openpdf</artifactId>
+    </dependency>
 
   </dependencies>
 
