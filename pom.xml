@@ -155,68 +155,6 @@
         <version>${project.version}</version>
       </dependency>
 
-      <!-- == Begin JasperReports == -->
-      <dependency>
-        <groupId>jasperreports</groupId>
-        <artifactId>jasperreports</artifactId>
-        <version>${jasperreports.version}</version>
-        <exclusions>
-          <exclusion>
-            <artifactId>commons-collections</artifactId>
-            <groupId>commons-collections</groupId>
-          </exclusion>
-          <exclusion>
-            <artifactId>commons-logging</artifactId>
-            <groupId>commons-logging</groupId>
-          </exclusion>
-          <exclusion>
-            <artifactId>javax.xml.soap</artifactId>
-            <groupId>saaj-api</groupId>
-          </exclusion>
-          <exclusion>
-            <artifactId>hibernate</artifactId>
-            <groupId>org.hibernate</groupId>
-          </exclusion>
-          <exclusion>
-            <artifactId>jcommon</artifactId>
-            <groupId>jfree</groupId>
-          </exclusion>
-          <exclusion>
-            <artifactId>jfreechart</artifactId>
-            <groupId>jfree</groupId>
-          </exclusion>
-          <exclusion>
-            <artifactId>poi</artifactId>
-            <groupId>org.apache.poi</groupId>
-          </exclusion>
-          <exclusion>
-            <artifactId>servlet-api</artifactId>
-            <groupId>javax.servlet</groupId>
-          </exclusion>
-          <exclusion>
-            <artifactId>xml-apis</artifactId>
-            <groupId>xml-apis</groupId>
-          </exclusion>
-          <exclusion>
-            <artifactId>groovy-all</artifactId>
-            <groupId>groovy</groupId>
-          </exclusion>
-          <exclusion>
-            <artifactId>ant</artifactId>
-            <groupId>ant</groupId>
-          </exclusion>
-          <exclusion>
-            <artifactId>bcmail-jdk14</artifactId>
-            <groupId>bouncycastle</groupId>
-          </exclusion>
-          <exclusion>
-            <artifactId>bcprov-jdk14</artifactId>
-            <groupId>bouncycastle</groupId>
-          </exclusion>
-        </exclusions>
-      </dependency>
-      <!-- == End JasperReports == -->
-
       <!-- == Begin Database == -->
       <dependency>
         <groupId>org.postgresql</groupId>
