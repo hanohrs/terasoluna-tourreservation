@@ -39,7 +39,6 @@ public class PdfDownloadView extends AbstractPdfView {
 		
 		PdfStamper stamper= new PdfStamper(reader, new FileOutputStream("test.pdf"));
 		AcroFields form = stamper.getAcroFields();
-	/*	
 		form.setField("referenceName", downloadPDFOutput.getReferenceName());
 		form.setField("referenceEmail", downloadPDFOutput.getReferenceEmail());
 		form.setField("referenceTel", downloadPDFOutput.getReferenceTel());
@@ -58,10 +57,10 @@ public class PdfDownloadView extends AbstractPdfView {
 		form.setField("customerAdd", downloadPDFOutput.getCustomerAdd());
 		form.setField("customerJob", downloadPDFOutput.getCustomerJob());
 		form.setField("tourDays", downloadPDFOutput.getTourDays());
-	*/	
 		stamper.setFormFlattening(true);
 		stamper.close();
-		
+		reader.close();
+
 		
 
 
