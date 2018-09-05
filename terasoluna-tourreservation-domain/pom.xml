@@ -58,6 +58,17 @@
       <artifactId>jasperreports</artifactId>
     </dependency>
     <!-- == End JasperReports == -->
+    <dependency>
+      <groupId>com.github.dozermapper</groupId>
+      <artifactId>dozer-core</artifactId>
+      <version>6.2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.dozermapper</groupId>
+      <artifactId>dozer-spring4</artifactId>
+      <version>6.2.0</version>
+    </dependency>
+
 
     <!-- == Begin Unit Test == -->
     <!-- == Begin TourReservation == -->

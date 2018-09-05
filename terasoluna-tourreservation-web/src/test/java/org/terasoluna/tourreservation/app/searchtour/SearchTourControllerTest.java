@@ -28,8 +28,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.util.ArrayList;
 import java.util.List;
 
-import com.github.dozermapper.core.DozerBeanMapperBuilder;
-import com.github.dozermapper.core.Mapper;
+import org.dozer.DozerBeanMapperBuilder;
+import org.dozer.Mapper;
 import org.joda.time.DateTime;
 import org.junit.Before;
 import org.junit.Test;

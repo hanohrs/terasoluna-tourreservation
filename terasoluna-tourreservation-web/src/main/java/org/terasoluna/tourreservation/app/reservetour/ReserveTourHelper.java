@@ -17,7 +17,7 @@ package org.terasoluna.tourreservation.app.reservetour;
 
 import javax.inject.Inject;
 
-import com.github.dozermapper.core.Mapper;
+import org.dozer.Mapper;
 import org.springframework.stereotype.Component;
 import org.terasoluna.gfw.common.exception.BusinessException;
 import org.terasoluna.tourreservation.domain.model.Customer;

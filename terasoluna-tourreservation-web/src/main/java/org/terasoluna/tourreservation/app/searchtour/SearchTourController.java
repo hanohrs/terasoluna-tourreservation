@@ -21,7 +21,7 @@ import javax.inject.Inject;
 
 import lombok.extern.slf4j.Slf4j;
 
-import com.github.dozermapper.core.Mapper;
+import org.dozer.Mapper;
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 import org.springframework.data.domain.Page;

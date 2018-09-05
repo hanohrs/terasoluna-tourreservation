@@ -15,7 +15,7 @@
  */
 package org.terasoluna.tourreservation.app.managereservation;
 
-import com.github.dozermapper.core.Mapper;
+import org.dozer.Mapper;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Component;
 import org.terasoluna.gfw.common.codelist.i18n.I18nCodeList;
