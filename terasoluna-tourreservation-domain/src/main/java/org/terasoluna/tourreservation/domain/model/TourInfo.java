@@ -46,11 +46,11 @@ import lombok.ToString;
 
 import org.joda.time.DateTime;
 
-@Data
 @ToString(exclude = { "reserveList", "accommodation", "arrival", "departure" })
 @EqualsAndHashCode(exclude = { "reserveList", "accommodation", "arrival",
         "departure" })
 @NoArgsConstructor
+@Data
 @Entity
 @Table(name = "tourinfo")
 public class TourInfo implements Serializable {

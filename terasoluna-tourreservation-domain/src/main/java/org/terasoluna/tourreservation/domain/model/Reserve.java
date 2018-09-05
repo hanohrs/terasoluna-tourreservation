@@ -40,10 +40,10 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@Data
 @ToString(exclude = { "customer", "tourInfo" })
 @EqualsAndHashCode(exclude = { "customer", "tourInfo" })
 @NoArgsConstructor
+@Data
 @Entity
 @Table(name = "reserve")
 public class Reserve implements Serializable {
