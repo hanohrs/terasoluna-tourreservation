@@ -47,6 +47,9 @@ public abstract class FunctionTestSupport extends ApplicationObjectSupport {
     @Inject
     protected MessageSource messageSource;
 
+    @Inject
+    protected WebDriverEventListener webDriverListenerImpl;
+
     @Value("${selenium.applicationContextUrl}")
     protected String applicationContextUrl;
 
@@ -107,9 +110,8 @@ public abstract class FunctionTestSupport extends ApplicationObjectSupport {
         driver.get(applicationContextUrl + "?locale=" + locale.getLanguage());
 
         // WebDriverEventListenerを実行ドライバに登録
-        WebDriverEventListener waitWebDriverEventListener = new WebDriverListenerImpl();
         EventFiringWebDriver webDriver = new EventFiringWebDriver(driver);
-        webDriver.register(waitWebDriverEventListener);
+        webDriver.register(webDriverListenerImpl);
 
         return webDriver;
     }

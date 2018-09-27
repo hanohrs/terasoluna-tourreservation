@@ -1,4 +1,4 @@
-package org.terasoluna.tourreservation.tourreserve.common;
+package org.terasoluna.tourreservation.tourreserve.selenium;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -11,15 +11,25 @@ import org.openqa.selenium.support.events.WebDriverEventListener;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.springframework.beans.factory.annotation.Value;
 
 /**
  * geckodriver0.14.0のバグで、待機処理が正常に起動しないため、 WebDriverEventListenerを実装
  */
 public class WebDriverListenerImpl implements WebDriverEventListener {
 
+    protected final Log logger = LogFactory.getLog(getClass());
+
     protected Wait<WebDriver> wait = null;
 
-    protected final Log logger = LogFactory.getLog(getClass());
+    @Value("${selenium.webDriverLoadWait}")
+    protected long webDriverLoadWait;
+
+    @Value("${selenium.webDriverLoadCompleteWait}")
+    protected long webDriverLoadCompleteWait;
+
+    @Value("${selenium.webDriverSleepWait}")
+    protected long webDriverSleepWait;
 
     @Override
     public void beforeNavigateTo(String url, WebDriver driver) {
@@ -67,17 +77,17 @@ public class WebDriverListenerImpl implements WebDriverEventListener {
 
     /**
      * click()後に、ページの読み込みが開始するまで待機を行い、<br>
-     * その後読み込みが完了するまで待機を行う。<br>
+     * その後読み込みが完了するまで待機を行う。
      */
     @Override
     public void afterClickOn(WebElement element, WebDriver driver) {
         try {
-            wait = new WebDriverWait(driver, 1, 500);
+            wait = new WebDriverWait(driver, webDriverLoadWait);
             wait.until(
                     (ExpectedCondition<Boolean>) wd -> ((JavascriptExecutor) wd)
                             .executeScript("return document.readyState").equals(
                                     "loading"));
-            wait = new WebDriverWait(driver, 3, 500);
+            wait = new WebDriverWait(driver, webDriverLoadCompleteWait);
             wait.until(
                     (ExpectedCondition<Boolean>) wd -> ((JavascriptExecutor) wd)
                             .executeScript("return document.readyState").equals(
