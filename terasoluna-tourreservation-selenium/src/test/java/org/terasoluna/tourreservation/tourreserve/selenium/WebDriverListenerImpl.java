@@ -28,9 +28,6 @@ public class WebDriverListenerImpl implements WebDriverEventListener {
     @Value("${selenium.webDriverLoadCompleteWait}")
     protected long webDriverLoadCompleteWait;
 
-    @Value("${selenium.webDriverSleepWait}")
-    protected long webDriverSleepWait;
-
     @Override
     public void beforeNavigateTo(String url, WebDriver driver) {
     }
